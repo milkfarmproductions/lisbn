@@ -66,6 +66,14 @@ describe "Lisbn" do
       end
     end
 
+    context "with a 13-digit ISBN starting with 979" do
+      let(:isbn) { "9798887350486" }
+
+      it "returns the isbn with dashes between the parts" do
+        expect(subject.isbn_with_dash).to eq("979-8-88735-048-6")
+      end
+    end
+
     context "with a 10-digit ISBN" do
       let(:isbn) { "1402780591" }
 
